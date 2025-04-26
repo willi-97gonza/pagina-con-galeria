@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria</title>
+    <script src="JS/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="CSS/bootstrap.min.css">
+</head>
+
+<body>
+    <a href="idex.html">
+        <button class="btn btn-danger">Inicio</button>
+    </a>
+    
+    <!-- Carrusel -->
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="IMG/fleha.jpg" class="d-block w-100" alt="" height="900" width="700">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>First slide label</h5>
+                    <p>Some representative placeholder content for the first slide.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="IMG/fleha.jpg" class="d-block w-100" alt="" height="900" width="700">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Second slide label</h5>
+                    <p>Some representative placeholder content for the second slide.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="IMG/Vaca_polaca.webp" class="d-block w-100" alt="" height="900" width="700">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Third slide label</h5>
+                    <p>Some representative placeholder content for the third slide.</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!-- Card -->
+    <div class="card" style="width: 18rem;">
+        <img src="IMG/xd.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">La vaca más viral de todo el foking internet.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+    </div>
+
+    <!-- Audio -->
+    <audio id="audio" src="mp3/Vaca polaca (version completa).mp3" type="audio/mp3"></audio>
+
+    <!-- JavaScript -->
+    <script>
+        // Obtener el carrusel y el audio
+        const carousel = document.getElementById('carouselExampleCaptions');
+        const audio = document.getElementById('audio');
+
+        // Evento para detectar cuando el carrusel cambia
+        carousel.addEventListener('slide.bs.carousel', function (event) {
+            // Verificar si estamos en la última imagen
+            const totalItems = carousel.querySelectorAll('.carousel-item').length;
+            const currentIndex = event.to;
+
+            if (currentIndex === totalItems - 1) {
+                // Reproducir el audio cuando llegamos a la última imagen
+                audio.play();
+            }
+        });
+    </script>
+</body>
+</html>
